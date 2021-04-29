@@ -1,6 +1,6 @@
 # Best Books - backend
 
-**Author**: Wenhao Piao and Allee Mccoy
+**Author**: Wenhao Piao and Allee Mccoy  
 **Version**: 1.0.0
 
 ## Overview
@@ -22,7 +22,8 @@ We are building an application that that will give a user the ability to store t
 
 ## Change Log
 
-04-27-2021 09:15pm PST - Started creating and setting up the repo
+04-27-2021 09:15pm PST - Started creating and setting up the repo and complete Lab12, Card1  
+04-28-2021 08:44pm PST - Complete Lab 12, Card 2
 
 <!-- Keep up to date with time stamps -->
 
