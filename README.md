@@ -24,6 +24,7 @@ We are building an application that that will give a user the ability to store t
 
 04-27-2021 09:15pm PST - Started creating and setting up the repo and complete Lab12, Card1  
 04-28-2021 08:44pm PST - Complete Lab 12, Card 2
+04-28-2021 08:58pm PST - Start Lab12, Card 3
 
 <!-- Keep up to date with time stamps -->
 
