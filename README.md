@@ -34,7 +34,7 @@ Name of feature: Lab: Class 12 - MongoDB
 
 Estimate of time needed to complete: 90 minutes
 
-Start time: 6:30pm PST
+Start time: 7:00pm PST
 
 Finish time: TBD
 
