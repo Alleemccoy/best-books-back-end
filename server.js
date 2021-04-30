@@ -18,19 +18,22 @@ const user = new User({
   email: 'test10@test.com',
   books: [
     {
-      name: 'Harry Potter4',
-      description: 'Harry Potter4',
-      status: 'read'
+      name: 'Harry Potter and the Sorcerer\'s Stone',
+      description: 'Harry Potter and the Sorcerer\'s Stone',
+      status: 'read',
+      photo: 'https://m.media-amazon.com/images/I/413lxIe20jL.jpg'
     },
     {
-      name: 'Harry Potter5',
-      description: 'Harry Potter5',
-      status: 'read'
+      name: 'Harry Potter and the Chamber of Secrets',
+      description: 'Harry Potter and the Chamber of Secrets',
+      status: 'read',
+      photo: 'https://m.media-amazon.com/images/I/51TA3VfN8RL.jpg'
     },
     {
-      name: 'Harry Potter6',
-      description: 'Harry Potter6',
-      status: 'read'
+      name: 'Harry Potter and the Prisoner of Azkaban ',
+      description: 'Harry Potter and the Prisoner of Azkaban ',
+      status: 'read',
+      photo: 'https://m.media-amazon.com/images/I/51Dfqo6jR5L.jpg'
     }
   ],
 });

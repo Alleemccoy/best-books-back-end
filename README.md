@@ -10,8 +10,9 @@ We are building an application that that will give a user the ability to store t
 ## Getting Started
 
 1. Clone down our repo
-2. Run command `npm i` to install the dependencies
-3. Run command `npm start` to start the application
+2. Create .env file and put `PORT=5000`
+3. Run command `npm i` to install the dependencies
+4. Run command `npm start` to start the application
 
 ## Architecture
 
@@ -38,6 +39,6 @@ Estimate of time needed to complete: 90 minutes
 
 Start time: 7:00pm PST
 
-Finish time: TBD
+Finish time: 9:30pm PST
 
-Actual time needed to complete: TBD
+Actual time needed to complete: 2.5 hours
