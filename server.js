@@ -44,6 +44,7 @@ const user = new User({
 // });
 
 app.use(cors());
+app.use(express.json());
 
 // Routes
 app.get('/', (req, res) => {
@@ -53,6 +54,18 @@ app.get('/', (req, res) => {
 app.get('/books', (req, res) => {
   User.find({ email: req.query.email }, (err, result) => {
     res.send(result[0].books);
+  });
+});
+
+app.post('/books', (req, res) => {
+  User.find({ email: req.body.email }, (err, result) => {
+    console.log(result);
+    // if (result.length < 1) {
+    //   res.status(400).send('User does not exist');
+    // } else {
+    //   const user = result[0];
+    //   console.log(user);
+    // }
   });
 });
 
