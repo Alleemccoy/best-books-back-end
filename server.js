@@ -58,14 +58,31 @@ app.get('/books', (req, res) => {
 });
 
 app.post('/books', (req, res) => {
+  // find the user by email
   User.find({ email: req.body.email }, (err, result) => {
-    console.log(result);
-    // if (result.length < 1) {
-    //   res.status(400).send('User does not exist');
-    // } else {
-    //   const user = result[0];
-    //   console.log(user);
-    // }
+    // error handling
+    if (err) {
+      res.status(500).send(err);
+    }
+
+    // if the user not found, send 'user does not exist' message to the frontend
+    if (result.length < 1) {
+      res.status(400).send('User does not exist');
+    } else {
+      // if the user found, add new book to that user
+      const user = result[0];
+      user.books.push({
+        name: req.body.books.name,
+        description: req.body.books.description,
+        status: req.body.books.status,
+        photo: req.body.books.photo
+      });
+      // save the user
+      user.save()
+        .then(result => {
+          res.send(result);
+        });
+    }
   });
 });
 
