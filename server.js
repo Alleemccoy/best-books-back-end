@@ -108,8 +108,38 @@ app.delete('/books/:id', (req, res) => {
         res.send(userData.books);
       });
     }
-  })
-})
+  });
+});
+
+app.put('/books/:id', (req, res) => {
+  //find user first
+  User.find({ email: req.body.email }, (err, result) => {
+    // err handling
+    if (err) {
+      res.status(500).send(err);
+    }
+    if (result.length < 1) {
+      res.status(400).send('User does not exist');
+    } else {
+      // if user found we need to find books
+      const user = result[0];
+      const books = user.books;
+      for (const book of books) {
+        if (`${book._id}` === req.params.id) {
+          book.name = req.body.books[0].name;
+          book.description = req.body.books[0].description;
+          book.status = req.body.books[0].status;
+          book.photo = req.body.books[0].photo;
+          break;
+        }
+      }
+      user.save().then(userData => {
+        console.log('update', userData);
+        res.send(userData.books);
+      });
+    }
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
