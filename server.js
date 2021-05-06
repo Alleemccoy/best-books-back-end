@@ -87,7 +87,7 @@ app.post('/books', (req, res) => {
   });
 });
 
-app.delete('/books:id', (req, res) => {
+app.delete('/books/:id', (req, res) => {
   // find the user by email
   console.log(req.query.email, req.params.id)
   User.find({ email: req.query.email }, (err, result) => {
