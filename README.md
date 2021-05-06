@@ -26,6 +26,8 @@ We are building an application that that will give a user the ability to store t
 04-27-2021 09:15pm PST - Started creating and setting up the repo and complete Lab12, Card1  
 04-28-2021 08:44pm PST - Complete Lab 12, Card 2
 04-28-2021 08:58pm PST - Start Lab12, Card 3
+05-01-2021 12:15pm PST - Start Lab13, Card 1
+05-01-2021 13:45pm PST - Complete set up POST /books route
 
 <!-- Keep up to date with time stamps -->
 
@@ -51,5 +53,14 @@ Estimate of time needed to complete: 90 minutes
 Start time: 8:50pm PST
 
 Finish time: TBD pm PST
+
+Actual time needed to complete: TBD
+Name of feature: Lab: Class 13 - Resource Create and Delete
+
+Estimate of time needed to complete: 2 hours
+
+Start time: Saturday, May 1st 12:15pm PST
+
+Finish time: TBD
 
 Actual time needed to complete: TBD

@@ -44,6 +44,7 @@ const user = new User({
 // });
 
 app.use(cors());
+app.use(express.json());
 
 // Routes
 app.get('/', (req, res) => {
@@ -55,6 +56,60 @@ app.get('/books', (req, res) => {
     res.send(result[0].books);
   });
 });
+
+app.post('/books', (req, res) => {
+  // find the user by email
+  User.find({ email: req.body.email }, (err, result) => {
+    // error handling
+    if (err) {
+      res.status(500).send(err);
+    }
+
+    // if the user not found, send 'user does not exist' message to the frontend
+    if (result.length < 1) {
+      res.status(400).send('User does not exist');
+    } else {
+      // if the user found, add new book to that user
+      console.log(req.body);
+      const user = result[0];
+      user.books.push({
+        name: req.body.books[0].name,
+        description: req.body.books[0].description,
+        status: req.body.books[0].status,
+        photo: req.body.books[0].photo
+      });
+      // save the user
+      user.save()
+        .then(result => {
+          res.send(result);
+        });
+    }
+  });
+});
+
+app.delete('/books:id', (req, res) => {
+  // find the user by email
+  console.log(req.query.email, req.params.id)
+  User.find({ email: req.query.email }, (err, result) => {
+    // err handling
+    if (err) {
+      res.status(500).send(err);
+    }
+
+    if (result.length < 1) {
+      res.status(400).send('User does not exist');
+    } else {
+      // if the user found, delete the book
+      const user = result[0];
+      user.books = user.books.filter(book => `${book._id}` !== req.params.id);
+      // save the user
+      user.save().then(userData => {
+        console.log('delete', userData);
+        res.send(userData.books);
+      });
+    }
+  })
+})
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
