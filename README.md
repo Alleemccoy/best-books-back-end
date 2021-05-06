@@ -45,6 +45,16 @@ Finish time: 9:30pm PST
 
 Actual time needed to complete: 2.5 hours
 
+
+Name of feature: Lab: Class 14 - Update a Resource
+
+Estimate of time needed to complete: 90 minutes
+
+Start time: 8:50pm PST
+
+Finish time: TBD pm PST
+
+Actual time needed to complete: TBD
 Name of feature: Lab: Class 13 - Resource Create and Delete
 
 Estimate of time needed to complete: 2 hours
