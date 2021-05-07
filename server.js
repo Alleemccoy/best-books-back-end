@@ -70,7 +70,6 @@ app.post('/books', (req, res) => {
       res.status(400).send('User does not exist');
     } else {
       // if the user found, add new book to that user
-      console.log(req.body);
       const user = result[0];
       user.books.push({
         name: req.body.books[0].name,
@@ -89,7 +88,6 @@ app.post('/books', (req, res) => {
 
 app.delete('/books/:id', (req, res) => {
   // find the user by email
-  console.log(req.query.email, req.params.id)
   User.find({ email: req.query.email }, (err, result) => {
     // err handling
     if (err) {
@@ -104,7 +102,6 @@ app.delete('/books/:id', (req, res) => {
       user.books = user.books.filter(book => `${book._id}` !== req.params.id);
       // save the user
       user.save().then(userData => {
-        console.log('delete', userData);
         res.send(userData.books);
       });
     }
@@ -134,7 +131,6 @@ app.put('/books/:id', (req, res) => {
         }
       }
       user.save().then(userData => {
-        console.log('update', userData);
         res.send(userData.books);
       });
     }
